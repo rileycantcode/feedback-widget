@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Feedback Widget</title>
+    <style>
+      /* Add some basic styles to make the widget look nice */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 32px;
+        margin-top: 50px;
+      }
+
+      .rating-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      .rating-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        margin: 0 10px;
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .rating-button:hover {
+        background-color: #f0f0f0;
+      }
+
+      .rating-button:focus {
+        outline: none;
+        border: 1px solid #0CEA99;
+      }
+
+      .rating-button.active {
+        background-color: #0CEA99;
+        color: #ffffff;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Please rate our website on a scale of 1-10</h1>
+    <div class="rating-container">
+      <button class="rating-button" value="1">1</button>
+      <button class="rating-button" value="2">2</button>
+      <button class="rating-button" value="3">3</button>
+      <button class="rating-button" value="4">4</button>
+      <button class="rating-button" value="5">5</button>
+      <button class="rating-button" value="6">6</button>
+      <button class="rating-button" value="7">7</button>
+      <button class="rating-button" value="8">8</button>
+      <button class="rating-button" value="9">9</button>
+      <button class="rating-button" value="10">10</button>
+    </div>
+    <script>
+      // Add JavaScript code to handle button clicks
+      const ratingButtons = document.querySelectorAll(".rating-button");
+      for (let i = 0; i < ratingButtons.length; i++) {
+        ratingButtons[i].addEventListener("click", function() {
+          // Remove the "active" class from all buttons
+          for (let j = 0; j < ratingButtons.length; j++) {
+            ratingButtons[j].classList.remove("active");
+          }
+          // Add the "active" class to the clicked button
+          this.classList.add("active");
+        });
+      }
+    </script>
+  </body>
+</html>
